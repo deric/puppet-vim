@@ -109,7 +109,7 @@ class vim(
   Boolean       $opt_syntax        = $vim::params::syntax,
   Array[String] $opt_misc          = $vim::params::misc,
   Hash          $opt_maps          = $vim::params::maps,
-  Arrya         $opt_code          = $vim::params::code,
+  Array         $opt_code          = $vim::params::code,
 ) inherits vim::params {
 
   case $ensure {
@@ -137,7 +137,6 @@ class vim(
   file { $conf_file:
     ensure  => $file_ensure,
     content => template('vim/vimrc.erb'),
-    require => Package[$package],
   }
 
   if $set_as_default and $set_editor_cmd {
