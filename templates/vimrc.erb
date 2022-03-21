@@ -1,7 +1,9 @@
 " vimrc: Managed by puppet - DO NOT EDIT
 " Changes manually to this file can, and will, be lost
 
-let skip_defaults_vim=<%= @skip_defaults_vim %>
+if 1
+  let g:skip_defaults_vim=<%= @skip_defaults_vim %>
+endif
 
 <% if @opt_nocompatible -%>
 set nocompatible
